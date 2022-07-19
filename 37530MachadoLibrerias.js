@@ -1,3 +1,5 @@
+// DESARROLLO DE UNA PLATAFORMA DE ALQUILER DE MOTOS.
+
 var clientsList = [];
 var nombre1 = ""
 var correo1 = ""
@@ -75,7 +77,10 @@ function show(){
     // Asignamos valor a la variable "extraHelmet" usando un operador ternario
     extraHelmet === ("si") ? extraHelmet = 10 : extraHelmet = 0;
 
-    // obtenemos las fechas de alquiler y devolucion de la moto mediante libreria Luxon
+/*
+Incorporé la libreria  Luxon  para manipulación de fechas. ya que anteriormente usaba el objeto Date de JS y era 
+bastante extenso. Al usar Luxon logre el mismo resultado ahorrando cerca de 10 lineas de codigo.
+*/
     DateTime = luxon.DateTime;
     var fechaHoy = DateTime.now()
     fechaHoy = (fechaHoy.toFormat('dd LLL yyyy'));
@@ -123,7 +128,10 @@ function show(){
     Cilindrada: ${ clienteStr1.motoCilindrada} 
     Fecha devolución: ${ clienteStr1.fecha}`);
 
-    // Mensaje de error con SweetAlerts
+/*    
+Anteriormente tenia una notificacion de error con un 'alert'. por lo que elegi reemplazarla por Sweet Alert
+y darle un aspecto mucho mas agradable.
+*/
 } else { 
         swal({
             title: "Error!",
@@ -132,8 +140,10 @@ function show(){
           });
     }
 }
-
-// Creamos un mensaje con la libreria Toastify que invite al usuario a ver el resumen de su reserva haciendo click en el boton 'volver arriba'
+/*
+Agregué una notifiacion con Toastify al hacer click en el boton 'Reservar' que invita al usuario a clickear el boton 'volver arriba' 
+para poder visualizar un resumen de su reserva.
+*/
 const tostado = document.getElementById("boton");
 tostado.addEventListener("click", () => {
    Toastify({
