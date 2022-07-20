@@ -164,3 +164,11 @@ document.addEventListener("keydown", function(event){
     }
   }
 )
+const subir = document.getElementById("arribaBtn");
+subir.addEventListener("click", window.onload = () => {
+    const elevador = new Elevator ({
+    element : document.querySelector("#arribaBtn"),
+    duration: 800
+  })
+ }
+)
